@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccfhkly2tsur7"]
+
+[ext_resource type="Script" uid="uid://boryw4pbh3b4m" path="res://player/player.gd" id="1_lh3fu"]
+[ext_resource type="AudioStream" uid="uid://c2u07od6j47vm" path="res://sound/sfx/walk.mp3" id="2_lh3fu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktrpi"]
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_lh3fu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-95, 21)
+scale = Vector2(2, 2)
+texture = SubResource("CompressedTexture2D_ktrpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AreaView" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="AreaView"]
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="TimerInvincible" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerRespawn" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="SfxRun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lh3fu")
+pitch_scale = 2.0
+bus = &"Sfx"
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_area_hurt_body_entered"]
+[connection signal="timeout" from="TimerInvincible" to="." method="_on_timer_invincible_timeout"]
+[connection signal="timeout" from="TimerRespawn" to="." method="_on_timer_respawn_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxluwg5e0celn"]
+
+[ext_resource type="PackedScene" uid="uid://cy1ble73e38u0" path="res://enemy/pic/enemy_pic.tscn" id="1_pvt3p"]
+[ext_resource type="Texture2D" uid="uid://bwuwyv2g4p378" path="res://assets/enemy/bat.png" id="2_up1a0"]
+
+[node name="EnemyPicBat" instance=ExtResource("1_pvt3p")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_up1a0")
+offset = Vector2(0, -1077)

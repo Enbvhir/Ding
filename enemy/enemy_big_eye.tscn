@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://js4ryiq1isxr"]
+
+[ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_hrobc"]
+[ext_resource type="Script" uid="uid://qoahgde0s7e" path="res://enemy/enemy_big_eye.gd" id="2_xl5ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrobc"]
+size = Vector2(104, 138)
+
+[node name="EnemyBigEye" instance=ExtResource("1_hrobc")]
+script = ExtResource("2_xl5ac")
+id = 1
+speed = 200.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(4.76837e-07, 307)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, -19)
+shape = SubResource("RectangleShape2D_hrobc")

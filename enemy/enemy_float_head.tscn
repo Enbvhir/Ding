@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd6c7x4q7754a"]
+
+[ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_ikd75"]
+[ext_resource type="Texture2D" uid="uid://bqximdivqo6fc" path="res://assets/enemy/float_head.png" id="2_fmuxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snwhu"]
+size = Vector2(112, 149)
+
+[node name="EnemyFloatHead" instance=ExtResource("1_ikd75")]
+id = 3
+speed = 250.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 233)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_fmuxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -72.5)
+shape = SubResource("RectangleShape2D_snwhu")

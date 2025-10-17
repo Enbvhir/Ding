@@ -6,9 +6,11 @@
 script = ExtResource("1_6q3x5")
 
 [node name="NodeSfx" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 autoplay = true
 bus = &"Music"
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Bgm" to="." method="_on_audio_stream_player_finished"]

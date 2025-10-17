@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bipcx18xbi4ns"]
+
+[ext_resource type="PackedScene" uid="uid://cy1ble73e38u0" path="res://enemy/pic/enemy_pic.tscn" id="1_a7l7i"]
+[ext_resource type="Texture2D" uid="uid://lkrigau0t6mf" path="res://assets/enemy/hand_eye.png" id="2_a7l7i"]
+
+[node name="EnemyPicBigEye" instance=ExtResource("1_a7l7i")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -1615)
+texture = ExtResource("2_a7l7i")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcgpr0w8ifa18"]
+
+[ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_5itsc"]
+[ext_resource type="Texture2D" uid="uid://13ldokde6875" path="res://assets/enemy/man_woman.png" id="2_i2cik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2cik"]
+size = Vector2(142, 41)
+
+[node name="EnemyManWoman" instance=ExtResource("1_5itsc")]
+id = 6
+speed = 210.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -472)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i2cik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -21.5)
+shape = SubResource("RectangleShape2D_i2cik")

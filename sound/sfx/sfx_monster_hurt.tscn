@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2fxqmd8qtga0"]
+
+[ext_resource type="PackedScene" uid="uid://j0ca6657fs4u" path="res://sound/sfx/sfx.tscn" id="1_qwa07"]
+[ext_resource type="AudioStream" uid="uid://c1b5ofoa7iif6" path="res://sound/sfx/sfx_monster_hurt.wav" id="2_qwa07"]
+
+[node name="SfxAtk1" instance=ExtResource("1_qwa07")]
+stream = ExtResource("2_qwa07")
+volume_db = 5.0

@@ -1,0 +1,233 @@
+[gd_scene load_steps=18 format=3 uid="uid://vjt0qytt7k78"]
+
+[ext_resource type="Texture2D" uid="uid://cd2t80h4tv7m6" path="res://ui/intro/bg.png" id="1_dqppd"]
+[ext_resource type="Script" uid="uid://cxcq33uvpwsfi" path="res://ui/intro/scene_intro.gd" id="1_y1353"]
+[ext_resource type="Texture2D" uid="uid://tbctfjuy5yis" path="res://ui/intro/intro1.png" id="2_y1353"]
+[ext_resource type="Texture2D" uid="uid://b14qmdq6404h1" path="res://ui/intro/intro2.png" id="3_daff5"]
+[ext_resource type="Texture2D" uid="uid://bgmmekdagva0s" path="res://ui/intro/intro3.png" id="4_iotp0"]
+[ext_resource type="Texture2D" uid="uid://e0wxxmy1lfrp" path="res://ui/intro/intro4.png" id="5_dqofe"]
+[ext_resource type="Texture2D" uid="uid://bol6gwq782t6" path="res://ui/intro/intro5.png" id="6_i4q1m"]
+[ext_resource type="Texture2D" uid="uid://bpm0ghpbxjrfw" path="res://ui/intro/intro6.png" id="7_ujgdt"]
+[ext_resource type="Texture2D" uid="uid://car4qp4m0dtdt" path="res://ui/intro/intro7.png" id="8_dgfjv"]
+[ext_resource type="Texture2D" uid="uid://hk68w7b7gysd" path="res://ui/intro/intro8.png" id="9_xcr77"]
+
+[sub_resource type="Animation" id="Animation_daff5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1936, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iotp0"]
+resource_name = "end"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y1353"]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1936, -4), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ready"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotp0"]
+_data = {
+&"RESET": SubResource("Animation_daff5"),
+&"end": SubResource("Animation_iotp0"),
+&"start": SubResource("Animation_y1353")
+}
+
+[sub_resource type="Animation" id="Animation_i4q1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dqofe"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ujgdt"]
+_data = {
+&"RESET": SubResource("Animation_i4q1m"),
+&"loop": SubResource("Animation_dqofe")
+}
+
+[node name="SceneIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1353")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(-1936, -4)
+texture = ExtResource("1_dqppd")
+centered = false
+
+[node name="Intro" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_y1353")
+centered = false
+
+[node name="Intro2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_daff5")
+centered = false
+
+[node name="Intro3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_iotp0")
+centered = false
+
+[node name="Intro4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_dqofe")
+centered = false
+
+[node name="Intro5" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_i4q1m")
+centered = false
+
+[node name="Intro6" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_ujgdt")
+centered = false
+
+[node name="Intro7" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_dgfjv")
+centered = false
+
+[node name="Intro8" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_xcr77")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iotp0")
+}
+autoplay = "start"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -246.0
+offset_right = 350.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "按空格继续……"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ujgdt")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

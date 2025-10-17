@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://gmnrfjnd6wf6"]
+
+[ext_resource type="Script" uid="uid://cjm2j5qj574o2" path="res://enemy/enemy.gd" id="1_ttpur"]
+[ext_resource type="Texture2D" uid="uid://dkqdjq5qtobu3" path="res://assets/enemy/big_eye.png" id="2_j4vrh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4vrh"]
+radius = 500.0
+
+[sub_resource type="Animation" id="Animation_ek21h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j4vrh"]
+resource_name = "die"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cx0d"]
+_data = {
+&"RESET": SubResource("Animation_ek21h"),
+&"die": SubResource("Animation_j4vrh")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ttpur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1599)
+texture = ExtResource("2_j4vrh")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="TimerCheck" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Area2DRange" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DRange"]
+shape = SubResource("CircleShape2D_j4vrh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1cx0d")
+}
+
+[connection signal="timeout" from="TimerCheck" to="." method="_on_timer_check_timeout"]
+[connection signal="body_entered" from="Area2DRange" to="." method="_on_area_2d_range_body_entered"]
+[connection signal="body_exited" from="Area2DRange" to="." method="_on_area_2d_range_body_exited"]

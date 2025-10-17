@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bjllujgsg2apo" path="res://assets/scene/blood.png" id="15_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://ddjqmbmvv6qjp" path="res://assets/scene/decorates.png" id="16_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://fvt56kivhl42" path="res://assets/scene/carpaet.png" id="17_udxuc"]
-[ext_resource type="PackedScene" uid="uid://7o7bevdmpmq8" path="res://elements/decoration/door.tscn" id="18_cbp6q"]
+[ext_resource type="PackedScene" uid="uid://7o7bevdmpmq8" path="res://level/prefab/door.tscn" id="18_cbp6q"]
 [ext_resource type="Texture2D" uid="uid://cl8q3hac6lcty" path="res://assets/scene/gz.png" id="18_ikiii"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ikiii"]

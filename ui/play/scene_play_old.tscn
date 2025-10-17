@@ -1,0 +1,306 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmewsxcubu43p"]
+
+[ext_resource type="Script" uid="uid://d4e1vpoq23qka" path="res://ui/play/scene_play_old.gd" id="1_qs2yt"]
+[ext_resource type="PackedScene" uid="uid://c5cxsqwbtmoxx" path="res://player/player_sing.tscn" id="2_6apec"]
+[ext_resource type="PackedScene" uid="uid://cgg3hms7pb3iv" path="res://player/player_view.tscn" id="3_ifj7e"]
+[ext_resource type="PackedScene" uid="uid://js4ryiq1isxr" path="res://enemy/enemy_big_eye.tscn" id="4_nw72c"]
+[ext_resource type="PackedScene" uid="uid://dr640pnrvvemo" path="res://world.tscn" id="5_g6kp8"]
+[ext_resource type="PackedScene" uid="uid://bh7vbi8yfyyru" path="res://utils/player_state.tscn" id="6_eibcc"]
+[ext_resource type="PackedScene" uid="uid://cukessl3tlctk" path="res://ui/ui_fail.tscn" id="7_6apec"]
+
+[node name="TestScene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qs2yt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerSing" parent="." instance=ExtResource("2_6apec")]
+position = Vector2(199, 106)
+
+[node name="PlayerView" parent="." instance=ExtResource("3_ifj7e")]
+position = Vector2(299, 214)
+
+[node name="Node2D" parent="." instance=ExtResource("5_g6kp8")]
+y_sort_enabled = true
+
+[node name="NodeAmmo" type="Node2D" parent="."]
+
+[node name="NodeEffect" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="PlayerState" parent="." instance=ExtResource("6_eibcc")]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="NodeForScare" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UiFail" parent="CanvasLayer" instance=ExtResource("7_6apec")]
+visible = false
+
+[node name="TimerGenerateEnemy" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="NodeGenerationPoint" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3158, 717)
+
+[node name="Marker2D32" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1983, -1231)
+
+[node name="Marker2D33" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1241, -2498)
+
+[node name="Marker2D34" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4023, -581)
+
+[node name="Marker2D35" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(857, -669)
+
+[node name="Marker2D36" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(391, -1438)
+
+[node name="Marker2D37" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1561, -1492)
+
+[node name="Marker2D38" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2244, -614)
+
+[node name="Marker2D39" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2244, -614)
+
+[node name="Marker2D40" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(3816, -2301)
+
+[node name="Marker2D41" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5085, -1176)
+
+[node name="Marker2D42" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5734, -2272)
+
+[node name="Marker2D43" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4196, -3349)
+
+[node name="Marker2D44" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5076, -4041)
+
+[node name="Marker2D45" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5062, -2755)
+
+[node name="Marker2D46" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4572, 72)
+
+[node name="Marker2D47" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4122, 1505)
+
+[node name="Marker2D48" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4487, 2601)
+
+[node name="Marker2D49" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5330, 1336)
+
+[node name="Marker2D50" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5723, 2263)
+
+[node name="Marker2D51" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(3643, 4764)
+
+[node name="Marker2D52" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2575, 2909)
+
+[node name="Marker2D53" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-432, 2572)
+
+[node name="Marker2D54" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(158, 3640)
+
+[node name="Marker2D55" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(776, 2572)
+
+[node name="Marker2D56" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(945, 3668)
+
+[node name="Marker2D57" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-404, 4708)
+
+[node name="Marker2D58" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(551, 4680)
+
+[node name="Marker2D59" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1810, 3162)
+
+[node name="Marker2D60" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3299, 3668)
+
+[node name="Marker2D61" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3636, 2628)
+
+[node name="Marker2D62" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4226, 1448)
+
+[node name="Marker2D63" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4985, 352)
+
+[node name="Marker2D64" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3720, -3133)
+
+[node name="Marker2D65" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-2736, -4060)
+
+[node name="Marker2D66" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3832, -4369)
+
+[node name="Marker2D67" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-2033, -4397)
+
+[node name="Marker2D68" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-628, -4313)
+
+[node name="Marker2D69" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(384, -4622)
+
+[node name="Marker2D70" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(749, -4060)
+
+[node name="Marker2D71" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(243, -3919)
+
+[node name="Marker2D72" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1339, -4622)
+
+[node name="Marker2D73" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2379, -4510)
+
+[node name="Marker2D74" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2154, -4173)
+
+[node name="Marker2D75" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2154, -4173)
+
+[node name="Marker2D9" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5325, 2389)
+
+[node name="Marker2D2" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(287, -2776)
+
+[node name="Marker2D10" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5271, -4120)
+
+[node name="Marker2D11" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5065, -2928)
+
+[node name="Marker2D12" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-3559, -2246)
+
+[node name="Marker2D13" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(4071, -1761)
+
+[node name="Marker2D14" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2498, -2613)
+
+[node name="Marker2D15" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1494, -4199)
+
+[node name="Marker2D16" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1440, 904)
+
+[node name="Marker2D17" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2452, 2167)
+
+[node name="Marker2D18" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2164, 3854)
+
+[node name="Marker2D19" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-6056, 4993)
+
+[node name="Marker2D20" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4902, 5022)
+
+[node name="Marker2D21" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-5508, 4287)
+
+[node name="Marker2D22" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-2840, 5152)
+
+[node name="Marker2D23" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(1284, 5123)
+
+[node name="Marker2D24" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5336, 5224)
+
+[node name="Marker2D25" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(3418, 3710)
+
+[node name="Marker2D26" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5062, 3537)
+
+[node name="Marker2D27" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6850, 3494)
+
+[node name="Marker2D28" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6850, -3962)
+
+[node name="Marker2D29" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5941, -530)
+
+[node name="Marker2D30" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6893, -1280)
+
+[node name="Marker2D31" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1259, -4137)
+
+[node name="Marker2D3" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(5832, -3249)
+
+[node name="Marker2D4" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(2703, -831)
+
+[node name="Marker2D5" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-1347, 4256)
+
+[node name="Marker2D6" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-2825, 2164)
+
+[node name="Marker2D7" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(-4937, -1233)
+
+[node name="Marker2D8" type="Marker2D" parent="NodeGenerationPoint"]
+position = Vector2(6829, 1800)
+
+[node name="EnemyBigEye" parent="." instance=ExtResource("4_nw72c")]
+position = Vector2(-658, 130)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 7335.0
+offset_top = -7279.0
+offset_right = 13810.0
+offset_bottom = 8309.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -12803.0
+offset_top = -7160.0
+offset_right = -6328.0
+offset_bottom = 8428.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -6329.0
+offset_top = 5653.0
+offset_right = 7388.0
+offset_bottom = 9907.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = -6330.0
+offset_top = -9253.0
+offset_right = 7387.0
+offset_bottom = -4999.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="timeout" from="TimerGenerateEnemy" to="." method="_on_timer_generate_enemy_timeout"]

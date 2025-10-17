@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://d7q5gmoom7o7"]
-
-[ext_resource type="PackedScene" uid="uid://j0ca6657fs4u" path="res://elements/sfx/sfx.tscn" id="1_0la63"]
-[ext_resource type="AudioStream" uid="uid://winlpks87sd4" path="res://assets/sfx/human_death.wav" id="2_0la63"]
-
-[node name="SfxAtk1" instance=ExtResource("1_0la63")]
-stream = ExtResource("2_0la63")

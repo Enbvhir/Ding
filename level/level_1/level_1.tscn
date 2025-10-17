@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=4 uid="uid://ine5ls1mg6cq"]
+
+[ext_resource type="PackedScene" uid="uid://duils3wayutid" path="res://level/level.tscn" id="1_s2urf"]
+[ext_resource type="Texture2D" uid="uid://d2r1y2ith4hpr" path="res://assets/scene/brick_3.png" id="2_b8haq"]
+[ext_resource type="TileSet" uid="uid://7j1dfn8p38jq" path="res://level/tile/tile.tres" id="3_bax5m"]
+[ext_resource type="PackedScene" uid="uid://7o7bevdmpmq8" path="res://level/prefab/door.tscn" id="4_rk12w"]
+[ext_resource type="PackedScene" uid="uid://buwh0bfare8gh" path="res://enemy/enemy_bat.tscn" id="5_rk12w"]
+[ext_resource type="PackedScene" uid="uid://js4ryiq1isxr" path="res://enemy/enemy_big_eye.tscn" id="6_qnhwy"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qnhwy"]
+vertices = PackedVector2Array(3977.961, 1125.9297, 9.953125, 1101.0625, 5.0390625, 0.7734375, 3974.0313, -91.75781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-5, -9, 0, 1111, 3988, 1136, 3984, -102)])
+
+[node name="Level1" instance=ExtResource("1_s2urf")]
+
+[node name="Marker2D" type="Marker2D" parent="EnterPoint" index="0"]
+position = Vector2(201, 205)
+
+[node name="Marker2D2" type="Marker2D" parent="EnterPoint" index="1"]
+position = Vector2(324, 207)
+
+[node name="Floor" type="TextureRect" parent="." index="1"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 3976.0
+offset_bottom = 1258.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b8haq")
+stretch_mode = 1
+
+[node name="Front" type="Node2D" parent="." index="2"]
+y_sort_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Front" index="0"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAAAAEAAAD//wgAAAAAAAEAAAD//wkAAAAAAAEAAAAfAAkAAAABAAEAAAAfAAgAAAABAAEAAAAfAAcAAAABAAEAAAAfAAYAAAABAAEAAAAfAAUAAAABAAEAAAAfAAQAAAABAAEAAAAfAAMAAAABAAEAAAAfAAIAAAABAAEAAAAfAAEAAAABAAEAAAAfAAAAAAABAAEAAAAfAP//AAABAAEAAAAeAP//AAACAAEAAAAdAP//AAADAAEAAAAcAP//AAACAAEAAAAbAP//AAACAAEAAAAaAP//AAACAAEAAAAZAP//AAADAAEAAAAYAP//AAADAAEAAAAXAP//AAADAAEAAAAWAP//AAADAAEAAAAVAP//AAADAAEAAAAUAP//AAADAAEAAAATAP//AAADAAEAAAASAP//AAADAAEAAAARAP//AAADAAEAAAAQAP//AAADAAEAAAAPAP//AAACAAEAAAAOAP//AAACAAEAAAANAP//AAADAAEAAAAMAP//AAADAAEAAAALAP//AAACAAEAAAAKAP//AAADAAEAAAAJAP//AAADAAEAAAAIAP//AAADAAEAAAAHAP//AAACAAEAAAAGAP//AAADAAEAAAAFAP//AAACAAEAAAAEAP//AAACAAEAAAADAP//AAACAAEAAAACAP//AAADAAEAAAABAP//AAACAAEAAAAAAP//AAACAAEAAAD/////AAAAAAEAAAAAAAgAAAACAAAAAAAAAAkAAAACAAEAAAABAAgAAAACAAAAAAABAAkAAAACAAEAAAACAAgAAAACAAAAAAACAAkAAAACAAEAAAADAAgAAAACAAAAAAADAAkAAAACAAEAAAAEAAgAAAACAAAAAAAEAAkAAAACAAEAAAAFAAgAAAACAAAAAAAFAAkAAAACAAEAAAAGAAgAAAACAAAAAAAGAAkAAAACAAEAAAAHAAgAAAACAAAAAAAHAAkAAAACAAEAAAAIAAgAAAACAAAAAAAIAAkAAAACAAEAAAAJAAgAAAACAAAAAAAJAAkAAAACAAEAAAAKAAgAAAACAAAAAAAKAAkAAAACAAEAAAALAAgAAAACAAAAAAALAAkAAAACAAEAAAAMAAgAAAACAAAAAAAMAAkAAAACAAEAAAANAAgAAAACAAAAAAANAAkAAAACAAEAAAAOAAgAAAACAAAAAAAOAAkAAAACAAEAAAAPAAgAAAACAAAAAAAPAAkAAAACAAEAAAAQAAgAAAACAAAAAAAQAAkAAAACAAEAAAARAAgAAAACAAAAAAARAAkAAAACAAEAAAASAAgAAAACAAAAAAASAAkAAAACAAEAAAATAAgAAAACAAAAAAATAAkAAAACAAEAAAAUAAgAAAACAAAAAAAUAAkAAAACAAEAAAAVAAgAAAACAAAAAAAVAAkAAAACAAEAAAAWAAgAAAACAAAAAAAWAAkAAAACAAEAAAAXAAgAAAACAAAAAAAXAAkAAAACAAEAAAAYAAgAAAACAAAAAAAYAAkAAAACAAEAAAAZAAgAAAACAAAAAAAZAAkAAAACAAEAAAAaAAgAAAACAAAAAAAaAAkAAAACAAEAAAAbAAgAAAACAAAAAAAbAAkAAAACAAEAAAAcAAgAAAACAAAAAAAcAAkAAAACAAEAAAAdAAgAAAACAAAAAAAdAAkAAAACAAEAAAAeAAgAAAACAAAAAAAeAAkAAAACAAEAAAA=")
+tile_set = ExtResource("3_bax5m")
+
+[node name="Door" parent="Front" index="1" instance=ExtResource("4_rk12w")]
+position = Vector2(3589, 1)
+
+[node name="EnemyBat" parent="." index="3" instance=ExtResource("5_rk12w")]
+position = Vector2(3491, 627)
+
+[node name="EnemyBigEye" parent="." index="4" instance=ExtResource("6_qnhwy")]
+position = Vector2(2026, 618)
+
+[node name="NavigationRegion2D" parent="." index="5"]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_qnhwy")

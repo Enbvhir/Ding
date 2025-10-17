@@ -1,0 +1,41 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://7j1dfn8p38jq"]
+
+[ext_resource type="Texture2D" uid="uid://bp7x0m0dy4fjl" path="res://level/tile/brick.png" id="1_nsdno"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nsdno"]
+polygon = PackedVector2Array(32, -64, 64, -64, 64, 64, 32, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iggo3"]
+polygon = PackedVector2Array(-64, -64, -32, -64, -32, 64, -64, 64, -64, -64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_br3jm"]
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2p2ae"]
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1g64"]
+texture = ExtResource("1_nsdno")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_iggo3")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -32, -64, -32, 64, -64, 64)
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_nsdno")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -64, 64, -64, 64, 64, 32, 64)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2p2ae")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_br3jm")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 4
+sources/0 = SubResource("TileSetAtlasSource_l1g64")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dst4ywl2ih28w"]
+
+[ext_resource type="PackedScene" uid="uid://cy1ble73e38u0" path="res://enemy/pic/enemy_pic.tscn" id="1_nfu8b"]
+[ext_resource type="Texture2D" uid="uid://ymiag31icapw" path="res://assets/enemy/worm.png" id="2_nfu8b"]
+
+[node name="EnemyPicBigEye" instance=ExtResource("1_nfu8b")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 658)
+texture = ExtResource("2_nfu8b")

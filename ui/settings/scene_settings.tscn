@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bssclqieuko1d"]
+
+[ext_resource type="Script" uid="uid://dp414yelj432m" path="res://ui/settings/scene_settings.gd" id="1_43orh"]
+[ext_resource type="Texture2D" uid="uid://dl4jgsa72jrw2" path="res://ui/settings/setting1.png" id="2_fe0bu"]
+[ext_resource type="StyleBox" uid="uid://dho5jityj50jn" path="res://ui/settings/grabber_sipder.tres" id="3_nqtqy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0atny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s74ii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf3nr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0atny"]
+
+[node name="SceneSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43orh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Setting1" type="Sprite2D" parent="."]
+position = Vector2(960, 543)
+texture = ExtResource("2_fe0bu")
+
+[node name="HScrollBarMusic" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 371.0
+offset_right = 1381.0
+offset_bottom = 536.0
+theme_override_styles/scroll = SubResource("StyleBoxEmpty_0atny")
+theme_override_styles/scroll_focus = SubResource("StyleBoxEmpty_s74ii")
+theme_override_styles/grabber = ExtResource("3_nqtqy")
+theme_override_styles/grabber_highlight = ExtResource("3_nqtqy")
+theme_override_styles/grabber_pressed = ExtResource("3_nqtqy")
+max_value = 1.0
+value = 1.0
+
+[node name="HScrollBarSfx" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 571.0
+offset_right = 1381.0
+offset_bottom = 736.0
+theme_override_styles/scroll = SubResource("StyleBoxEmpty_0atny")
+theme_override_styles/scroll_focus = SubResource("StyleBoxEmpty_bf3nr")
+theme_override_styles/grabber = ExtResource("3_nqtqy")
+theme_override_styles/grabber_highlight = ExtResource("3_nqtqy")
+theme_override_styles/grabber_pressed = ExtResource("3_nqtqy")
+max_value = 1.0
+value = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(1478, 763, 1244, 1005, 1478, 1005)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_0atny")
+
+[connection signal="scrolling" from="HScrollBarMusic" to="." method="_on_h_scroll_bar_music_scrolling"]
+[connection signal="scrolling" from="HScrollBarSfx" to="." method="_on_h_scroll_bar_sfx_scrolling"]
