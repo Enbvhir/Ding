@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxe873dxpucxb"]
+
+[ext_resource type="Script" uid="uid://bkkv8blk8sea3" path="res://level/prefab/light/light.gd" id="1_ffn4q"]
+[ext_resource type="Texture2D" uid="uid://d137011i7pbt4" path="res://assets/light/light_circle.png" id="2_b64cd"]
+
+[node name="Light" type="Node2D"]
+script = ExtResource("1_ffn4q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -181)
+color = Color(1, 1, 1, 0)
+energy = 0.0
+texture = ExtResource("2_b64cd")
+texture_scale = 0.01

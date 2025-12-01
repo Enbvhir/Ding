@@ -16,7 +16,7 @@ var light_accumulate:float
 func _physics_process(delta: float) -> void:
 	if target:pass
 	else:
-		live_player_in_range=player_in_range.filter(func(p:Player):return not p.dead)
+		live_player_in_range=player_in_range.filter(func(p:Player):return not p.is_dead)
 		if live_player_in_range.is_empty():pass
 		else:target=live_player_in_range.pick_random()
 	
@@ -40,7 +40,7 @@ func _on_area_2d_range_body_exited(body: Node2D) -> void:
 
 func _on_timer_check_timeout() -> void:
 	if target:
-		if target.dead:
+		if target.is_dead:
 			target=null
 			return
 		navigation_agent_2d.target_position=target.position

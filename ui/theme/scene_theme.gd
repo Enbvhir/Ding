@@ -3,7 +3,14 @@ extends Control
 func _ready() -> void:
 	Global.play_music(Global.MUSIC_THEME)
 
-func _on_button_pressed() -> void:Global.switch_scene(Global.SCENE_INTRO)
+
+func _on_button_5_pressed() -> void:
+	Global.statement_num_player=1
+	Global.switch_scene(Global.SCENE_SELECT_CHARACTER)
+
+func _on_button_pressed() -> void:
+	Global.statement_num_player=2
+	Global.switch_scene(Global.SCENE_INTRO)
 
 func _on_button_2_pressed() -> void:get_tree().quit()
 

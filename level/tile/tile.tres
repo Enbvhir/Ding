@@ -8,10 +8,10 @@ polygon = PackedVector2Array(32, -64, 64, -64, 64, 64, 32, 64)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iggo3"]
 polygon = PackedVector2Array(-64, -64, -32, -64, -32, 64, -64, 64, -64, -64)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_br3jm"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xr7xk"]
 polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2p2ae"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0x241"]
 polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1g64"]
@@ -27,10 +27,10 @@ texture_region_size = Vector2i(128, 128)
 0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_nsdno")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -64, 64, -64, 64, 64, 32, 64)
 3:1/0 = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2p2ae")
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0x241")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 2:1/0 = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_br3jm")
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xr7xk")
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 3:0/0 = 0
 

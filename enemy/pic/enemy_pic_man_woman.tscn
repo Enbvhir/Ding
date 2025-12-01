@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8vgvrtxj18bm"]
 
 [ext_resource type="PackedScene" uid="uid://cy1ble73e38u0" path="res://enemy/pic/enemy_pic.tscn" id="1_tobbi"]
-[ext_resource type="Texture2D" uid="uid://13ldokde6875" path="res://assets/enemy/man_woman.png" id="2_tobbi"]
+[ext_resource type="Texture2D" uid="uid://13ldokde6875" path="res://enemy/pic/man_woman.png" id="2_tobbi"]
 
 [node name="EnemyPicBigEye" instance=ExtResource("1_tobbi")]
 

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var hp:float=100
 var restore:float=5
-var dead:bool=false
+var is_dead:bool=false
 var is_atk:bool=false
 
 var speed:float=200
@@ -15,7 +15,7 @@ var speed:float=200
 
 func _physics_process(delta: float) -> void:
 	control(delta)
-	if dead:sfx_run.stop()
+	if is_dead:sfx_run.stop()
 	else:
 		if hp<100:hp+=restore*delta
 		if sfx_run.playing:
@@ -32,7 +32,7 @@ func _on_area_hurt_body_entered(body: Node2D) -> void:
 	var e:Enemy=body
 	hp-=e.atk
 	if hp<=0:
-		dead=true
+		is_dead=true
 		timer_respawn.start()
 		%HurtBox.set_deferred("monitoring",false)
 		modulate.a=0.2
@@ -50,7 +50,7 @@ func _on_timer_invincible_timeout() -> void:
 	modulate.a=1
 
 func _on_timer_respawn_timeout() -> void:
-	dead=false
+	is_dead=false
 	hp=100
 	timer_invincible.start()
 	modulate.a=0.5

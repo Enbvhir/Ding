@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd6c7x4q7754a"]
 
 [ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_ikd75"]
-[ext_resource type="Texture2D" uid="uid://bqximdivqo6fc" path="res://assets/enemy/float_head.png" id="2_fmuxl"]
+[ext_resource type="Texture2D" uid="uid://bqximdivqo6fc" path="res://enemy/pic/float_head.png" id="2_fmuxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snwhu"]
 size = Vector2(112, 149)

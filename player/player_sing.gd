@@ -15,7 +15,7 @@ var atk_stack:Array
 func control(delta:float):
 	var vector_direction=Vector2.from_angle(rotation)
 	var vector_input=Input.get_vector("a","d","w","s")
-	if dead:
+	if is_dead:
 		velocity=speed*2*vector_input.normalized()
 		animation_player.play("RESET")
 	else:
@@ -25,7 +25,7 @@ func control(delta:float):
 			if timer_atk.is_stopped():animation_player.play("walk")
 	
 	move_and_slide()
-	if dead:pass
+	if is_dead:pass
 	else:
 		if area_damage.monitoring:area_damage.monitoring=false
 		if timer_atk.is_stopped():

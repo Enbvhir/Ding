@@ -6,7 +6,7 @@ extends Enemy
 func _physics_process(delta: float) -> void:
 	if target:pass
 	else:
-		live_player_in_range=player_in_range.filter(func(p:Player):return not p.dead)
+		live_player_in_range=player_in_range.filter(func(p:Player):return not p.is_dead)
 		if live_player_in_range.is_empty():pass
 		else:target=live_player_in_range.pick_random()
 	

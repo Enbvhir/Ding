@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm3g7buibyi17"]
+
+[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/character.png" id="1_1veuc"]
+[ext_resource type="Script" uid="uid://plsnonhqiiqd" path="res://ui/select_character/select_character.gd" id="1_ypcwn"]
+
+[node name="SelectCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypcwn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.05490196, 0.08627451, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 480)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 580)
+layout_mode = 2
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(1059, 248)
+texture = ExtResource("1_1veuc")
+region_enabled = true
+region_rect = Rect2(158, 313, 1523, 465)
+
+[node name="Character2" type="Sprite2D" parent="."]
+position = Vector2(826, 770)
+texture = ExtResource("1_1veuc")
+region_enabled = true
+region_rect = Rect2(44, 853, 1580, 560)
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4gy7t0qei81w"]
 
 [ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_048pw"]
-[ext_resource type="Texture2D" uid="uid://bsipggvy2dnxt" path="res://assets/enemy/frog.png" id="2_updns"]
+[ext_resource type="Texture2D" uid="uid://bsipggvy2dnxt" path="res://enemy/pic/frog.png" id="2_updns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lgom"]
 size = Vector2(142, 155)

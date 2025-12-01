@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://y5gn0yborfms"]
+
+[ext_resource type="Script" uid="uid://b1oa6d7olsu7s" path="res://ui/play/hud_player_state.gd" id="1_0ou0w"]
+[ext_resource type="Texture2D" uid="uid://b3uewmuj26pgw" path="res://ui/play/HUD.png" id="1_frhob"]
+[ext_resource type="Texture2D" uid="uid://8pg5ccubidtt" path="res://ui/play/head_pic.png" id="2_0ou0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a65ym"]
+atlas = ExtResource("1_frhob")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjqrk"]
+atlas = ExtResource("1_frhob")
+region = Rect2(308, 135, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o60r3"]
+atlas = ExtResource("1_frhob")
+region = Rect2(308, 39, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7h87"]
+atlas = ExtResource("1_frhob")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjyqo"]
+atlas = ExtResource("1_frhob")
+region = Rect2(308, 135, 56, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2bom"]
+atlas = ExtResource("1_frhob")
+region = Rect2(308, 71, 56, 2)
+
+[node name="HudPlayerState" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ou0w")
+
+[node name="PlayerStateView" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 2
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="BarBack" type="TextureProgressBar" parent="PlayerStateView"]
+offset_left = 34.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+texture_under = SubResource("AtlasTexture_a65ym")
+texture_progress = SubResource("AtlasTexture_xjqrk")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="Bar" type="TextureProgressBar" parent="PlayerStateView"]
+offset_left = 34.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+texture_under = SubResource("AtlasTexture_a65ym")
+texture_progress = SubResource("AtlasTexture_o60r3")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="HeadPic" type="Sprite2D" parent="PlayerStateView"]
+position = Vector2(17, 21)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0ou0w")
+region_enabled = true
+region_rect = Rect2(30, 485, 346, 417)
+
+[node name="PlayerStateSing" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 2
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="BarBack" type="TextureProgressBar" parent="PlayerStateSing"]
+offset_left = 43.0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 70.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_w7h87")
+texture_progress = SubResource("AtlasTexture_vjyqo")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="Bar" type="TextureProgressBar" parent="PlayerStateSing"]
+offset_left = 43.0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 70.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = SubResource("AtlasTexture_w7h87")
+texture_progress = SubResource("AtlasTexture_o2bom")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="HeadPic" type="Sprite2D" parent="PlayerStateSing"]
+position = Vector2(118, 21)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0ou0w")
+region_enabled = true
+region_rect = Rect2(422, 30, 345, 417)

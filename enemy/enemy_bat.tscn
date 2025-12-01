@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://buwh0bfare8gh"]
 
 [ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_27l2b"]
-[ext_resource type="Texture2D" uid="uid://bwuwyv2g4p378" path="res://assets/enemy/bat.png" id="2_g5xap"]
+[ext_resource type="Texture2D" uid="uid://bwuwyv2g4p378" path="res://enemy/pic/bat.png" id="2_g5xap"]
 [ext_resource type="Script" uid="uid://ciq74ytnse3ms" path="res://enemy/enemy_bat.gd" id="2_tt1bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt1bq"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xsqa3e5vtnq6" path="res://level/prefab/door.gd" id="1_pgtnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b6ml"]
-size = Vector2(648, 104)
+size = Vector2(698, 104)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_pgtnp")

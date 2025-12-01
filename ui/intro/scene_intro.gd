@@ -10,6 +10,7 @@ func _ready() -> void:
 	intros=[$Intro, $Intro2, $Intro3, $Intro4, $Intro5, $Intro6, $Intro7, $Intro8]
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):Global.switch_scene(Global.SCENE_PLAY)
 	if is_ready:
 		if Input.is_action_just_pressed("space"):
 			if order<8:

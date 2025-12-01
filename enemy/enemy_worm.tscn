@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://by3yh8325fpdr"]
 
 [ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_qdv0h"]
-[ext_resource type="Texture2D" uid="uid://ymiag31icapw" path="res://assets/enemy/worm.png" id="2_dcxtu"]
+[ext_resource type="Texture2D" uid="uid://ymiag31icapw" path="res://enemy/pic/worm.png" id="2_dcxtu"]
 [ext_resource type="Script" uid="uid://b0hanmr8aw6sa" path="res://enemy/enemy_worm.gd" id="2_i2f0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2f0s"]

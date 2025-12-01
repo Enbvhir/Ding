@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://bkly5jbqpf05x" path="res://player/collision_shape_2d.gd" id="4_5iyc5"]
 [ext_resource type="Texture2D" uid="uid://drslv8057t82f" path="res://player/view_idle.png" id="5_ybl3g"]
 [ext_resource type="Texture2D" uid="uid://dadeu4sls0qu4" path="res://assets/light/torch-fade.png" id="6_72shw"]
-[ext_resource type="Texture2D" uid="uid://msovp1timoy7" path="res://assets/light/light2.png" id="7_72shw"]
+[ext_resource type="Texture2D" uid="uid://d137011i7pbt4" path="res://assets/light/light_circle.png" id="7_xaw5s"]
 [ext_resource type="Texture2D" uid="uid://cml1i42cmucrl" path="res://assets/ui/fail2.png" id="8_6n2qv"]
-[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://assets/ui/toturial.png" id="9_fvpgq"]
+[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/character.png" id="9_fvpgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybl3g"]
 size = Vector2(123, 49)
@@ -323,9 +323,8 @@ texture_scale = 0.4
 
 [node name="PointLight2D2" type="PointLight2D" parent="." index="6"]
 position = Vector2(0, -39)
-scale = Vector2(1.5, 1.5)
 energy = 0.5
-texture = ExtResource("7_72shw")
+texture = ExtResource("7_xaw5s")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
 

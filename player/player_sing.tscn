@@ -1,13 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://c5cxsqwbtmoxx"]
+[gd_scene load_steps=27 format=3 uid="uid://c5cxsqwbtmoxx"]
 
 [ext_resource type="PackedScene" uid="uid://ccfhkly2tsur7" path="res://player/player.tscn" id="1_bjlvv"]
 [ext_resource type="Script" uid="uid://beului1cuskkp" path="res://player/player_sing.gd" id="2_ogifs"]
 [ext_resource type="Texture2D" uid="uid://dmrcaug7tfp7g" path="res://player/sing.png" id="3_qsl30"]
 [ext_resource type="Texture2D" uid="uid://b75mfh5nlbp5b" path="res://player/sing_idle.png" id="4_rj4jd"]
 [ext_resource type="Texture2D" uid="uid://lgbv4tdxgk1c" path="res://player/sing_atk.png" id="5_3j47b"]
-[ext_resource type="Texture2D" uid="uid://msovp1timoy7" path="res://assets/light/light2.png" id="6_ou28q"]
+[ext_resource type="Texture2D" uid="uid://msovp1timoy7" path="res://assets/light/light_circle_hard.png" id="6_ou28q"]
 [ext_resource type="Texture2D" uid="uid://cmlq5dyky2le1" path="res://assets/ui/fail1.png" id="7_1rixm"]
-[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://assets/ui/toturial.png" id="8_s5efl"]
+[ext_resource type="Texture2D" uid="uid://d137011i7pbt4" path="res://assets/light/light_circle.png" id="7_wubb8"]
+[ext_resource type="Texture2D" uid="uid://45prbq05qno" path="res://ui/character.png" id="8_s5efl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou28q"]
 size = Vector2(102, 76)
@@ -353,7 +354,6 @@ _data = {
 }
 
 [node name="PlayerSing" instance=ExtResource("1_bjlvv")]
-y_sort_enabled = true
 collision_mask = 4
 script = ExtResource("2_ogifs")
 
@@ -396,9 +396,9 @@ shape = SubResource("RectangleShape2D_3j47b")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." index="8"]
 position = Vector2(0, -72)
-scale = Vector2(2, 2)
 energy = 0.5
-texture = ExtResource("6_ou28q")
+texture = ExtResource("7_wubb8")
+texture_scale = 2.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="10"]
 libraries = {

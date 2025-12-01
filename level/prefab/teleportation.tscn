@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://72tq4uw8vp0u"]
+
+[ext_resource type="Script" uid="uid://civbo05uthhsg" path="res://level/prefab/teleportation.gd" id="1_bnt1x"]
+
+[node name="Teleportation" type="Area2D"]
+script = ExtResource("1_bnt1x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

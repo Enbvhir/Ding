@@ -22,7 +22,7 @@ func control(delta:float):
 	#queue_redraw()
 	var vector_input=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity=speed*vector_input.normalized()
-	if dead:
+	if is_dead:
 		velocity=speed*2*vector_input.normalized()
 		animation_player.play("RESET")
 	else:

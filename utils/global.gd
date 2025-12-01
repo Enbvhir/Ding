@@ -1,6 +1,7 @@
 extends Node
 
 const SCENE_THEME = preload("uid://d240vmenul21x")
+const SCENE_SELECT_CHARACTER = preload("uid://cm3g7buibyi17")
 const SCENE_PLAY = preload("uid://csresjl4ikdxf")
 const SCENE_INTRO = preload("uid://vjt0qytt7k78")
 const SCENE_STAFF = preload("uid://b7fhlpox4xl8h")
@@ -18,7 +19,7 @@ const SFX_HUMAN_DEAD = preload("uid://d7q5gmoom7o7")
 const SFX_HUMAN_HURT = preload("uid://bui7g8rewm5x1")
 const SFX_MONSTER_DEAD = preload("uid://cluyct7nm6sse")
 const SFX_MONSTER_HURT = preload("uid://c2fxqmd8qtga0")
-func play_sfx(sfx:PackedScene):%NodeSfx.add_child(sfx.instantiate())
+func play_sfx(sfx:PackedScene):%Sfx.add_child(sfx.instantiate())
 
 const MUSIC_FAIL = preload("uid://6qhqdheh1mkc")
 const MUSIC_PLAY =preload("uid://bakru7uu2bhpy")
@@ -82,6 +83,9 @@ const UI_JUMP_SCARE = preload("uid://18ugjk8ni5le")
 
 const AMMO = preload("res://elements/projectile/Ammo.tscn")
 
+
+var statement_num_player:int
+var statement_selected_character:int
 
 var node_ammo:Node2D
 var node_effect:Node2D

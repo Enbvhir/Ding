@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://iloeg25rrcny"]
 
 [ext_resource type="PackedScene" uid="uid://gmnrfjnd6wf6" path="res://enemy/enemy.tscn" id="1_d0fss"]
-[ext_resource type="Texture2D" uid="uid://lkrigau0t6mf" path="res://assets/enemy/hand_eye.png" id="2_426xr"]
+[ext_resource type="Texture2D" uid="uid://lkrigau0t6mf" path="res://enemy/pic/hand_eye.png" id="2_426xr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idp7e"]
 size = Vector2(216, 78)
