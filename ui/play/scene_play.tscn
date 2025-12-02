@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://csresjl4ikdxf"]
+[gd_scene load_steps=13 format=3 uid="uid://csresjl4ikdxf"]
 
 [ext_resource type="Script" uid="uid://dylwipnntpk52" path="res://ui/play/scene_play.gd" id="1_pq2io"]
+[ext_resource type="Texture2D" uid="uid://16x0gga4vkuc" path="res://ui/play/ghost01.tres" id="3_5fae1"]
 [ext_resource type="Texture2D" uid="uid://d108p84d5nra6" path="res://ui/play/frame.png" id="3_trsgt"]
 [ext_resource type="Texture2D" uid="uid://wto810c0siw2" path="res://ui/play/frame_light.png" id="4_dscmi"]
+[ext_resource type="Script" uid="uid://d3h678t2n8qap" path="res://ui/play/ghost.gd" id="4_em0sh"]
+[ext_resource type="Texture2D" uid="uid://clerqrx174y5u" path="res://ui/play/ghost02.tres" id="4_lphlo"]
 [ext_resource type="PackedScene" uid="uid://y5gn0yborfms" path="res://ui/play/hud_player_state.tscn" id="4_trsgt"]
+[ext_resource type="Texture2D" uid="uid://b32qy3dtr7jnc" path="res://ui/play/ghost03.tres" id="5_em0sh"]
+[ext_resource type="Texture2D" uid="uid://bk0df5nv772dh" path="res://ui/play/frame_filter.png" id="5_pq2io"]
+[ext_resource type="Texture2D" uid="uid://beq5lx6p0bm58" path="res://ui/play/ghost04.tres" id="6_j4jk4"]
 [ext_resource type="PackedScene" uid="uid://cukessl3tlctk" path="res://ui/play/ui_fail.tscn" id="7_6apec"]
+[ext_resource type="Texture2D" uid="uid://b27f4m82gaeth" path="res://ui/play/frame_flicker.png" id="7_tcohp"]
 
 [node name="ScenePlay" type="Control"]
 y_sort_enabled = true
@@ -43,19 +50,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(18.892157, 0, 0, 0.1254902)
+color = Color(18.892157, 18.892157, 18.892157, 0)
+
+[node name="Ghost01" type="Sprite2D" parent="CanvasLayer/ColorRect" groups=["ghosts"]]
+self_modulate = Color(0.9459776, 0.88272464, 0.9459776, 1)
+z_index = 2
+position = Vector2(92, 651)
+rotation = 0.2682396
+scale = Vector2(0.5984615, 0.5984615)
+texture = ExtResource("3_5fae1")
+script = ExtResource("4_em0sh")
+
+[node name="Ghost02" type="Sprite2D" parent="CanvasLayer/ColorRect" groups=["ghosts"]]
+z_index = 2
+position = Vector2(1747.9999, 514)
+scale = Vector2(0.5921409, 0.5921409)
+texture = ExtResource("4_lphlo")
+script = ExtResource("4_em0sh")
+
+[node name="Ghost03" type="Sprite2D" parent="CanvasLayer/ColorRect" groups=["ghosts"]]
+z_index = 1
+position = Vector2(1911, 250.00002)
+scale = Vector2(0.55709857, 0.55709857)
+texture = ExtResource("5_em0sh")
+script = ExtResource("4_em0sh")
+
+[node name="Ghost04" type="Sprite2D" parent="CanvasLayer/ColorRect" groups=["ghosts"]]
+self_modulate = Color(0.8891022, 0.8929553, 0.8929553, 1)
+z_index = 1
+position = Vector2(48.999996, 381)
+rotation = 0.963808
+scale = Vector2(0.6136615, 0.6136615)
+texture = ExtResource("6_j4jk4")
+script = ExtResource("4_em0sh")
+
+[node name="FrameFlicker" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(51, 51)
+scale = Vector2(0.6420139, 0.53541666)
+texture = ExtResource("7_tcohp")
+centered = false
 
 [node name="Frame" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 scale = Vector2(0.6666667, 0.5625)
 texture = ExtResource("3_trsgt")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="FrameLight" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
-visible = false
+z_index = 1
 position = Vector2(960, 890.00006)
 scale = Vector2(0.831, 0.831)
 texture = ExtResource("4_dscmi")
+metadata/_edit_lock_ = true
+
+[node name="FrameFilter" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.8666667, 1, 1, 0.90588236)
+z_index = -1
+z_as_relative = false
+scale = Vector2(0.6666667, 0.5630208)
+texture = ExtResource("5_pq2io")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="TimerGenerateEnemy" type="Timer" parent="."]
 wait_time = 30.0
